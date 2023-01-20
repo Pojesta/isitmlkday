@@ -1,0 +1,28 @@
+﻿@page
+@model isitmlkday.Pages.IndexModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Is it MLK Day?</title>
+    <style>
+        /* Style the "YES" or "NO" text */
+        p {
+            font-size: 72px;
+            color: white;
+            text-align: center;
+        }
+        /* Center the text and set the background color */
+        body {
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <p>@Model.IsMLKDay</p>
+</body>
+</html>
