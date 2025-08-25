@@ -16,16 +16,10 @@ namespace isitmlkday.Pages
 
         public void OnGet()
         {
-            var today = DateTime.Now;
-            var mlkDay = new DateTime(today.Year, 1, 18);
-            if (today.Month == 1 && today.Day == 18)
-            {
-                IsMLKDay = "YES";
-            }
-            else
-            {
-                IsMLKDay = "NO";
-            }
+            var today = DateTime.Today;
+            var firstDay = new DateTime(today.Year, 1, 1);
+            var mlkDay = firstDay.AddDays(((int)DayOfWeek.Monday - (int)firstDay.DayOfWeek + 7) % 7 + 14);
+            IsMLKDay = today == mlkDay ? "YES" : "NO";
         }
     }
 }
